@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./routes";
 import reportWebVitals from "./reportWebVitals";
+import ThemeProvider from "@mui/system/ThemeProvider";
+
+import { theme } from "./theme";
 
 import "./styles/index.css";
 
@@ -10,7 +13,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

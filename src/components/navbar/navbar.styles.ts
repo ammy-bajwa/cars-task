@@ -1,10 +1,19 @@
 import styled from "@emotion/styled";
 
-export const NavbarWrapper = styled.nav`
+interface NavbarWrapperProps {
+  primary: string;
+  color: string;
+}
+
+export const NavbarWrapper = styled.nav<NavbarWrapperProps>`
   align-items: center;
+  border-bottom: ${(props) => `1px solid ${props?.primary}`};
   display: flex;
   justify-content: space-between;
   padding: 20px 10px;
+  a {
+    color: ${(props) => props?.color};
+  }
 `;
 
 export const NavbarListWrapper = styled.ul`
