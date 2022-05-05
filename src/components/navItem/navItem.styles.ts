@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
 
-const NavbarWrapper = styled.div`
+export const NavItemWrapper = styled.div`
   display: flex;
 `;

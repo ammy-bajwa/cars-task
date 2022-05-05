@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material/styles";
 import { FiltersWrapper } from ".";
-import { FilterItem } from "../filterItem";
+import { FilterItem } from "..";
 
 export const Filters = () => {
   const theme = useTheme();
