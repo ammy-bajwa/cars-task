@@ -4,6 +4,7 @@ import {
   getMoreCars,
   getColorsList,
   getManufactures,
+  carsActions,
 } from "../../index";
 
 describe("Testing fetching cars", () => {
@@ -48,5 +49,36 @@ describe("Testing fetching cars", () => {
     const store = createStore;
     const data = await store.dispatch(getManufactures()).unwrap();
     expect(data?.manufacturers).toBeTruthy();
+  });
+
+  it("Should be able to set current color", async () => {
+    const store = createStore;
+    store.dispatch(carsActions.setSelectedColor("red"));
+    expect(store.getState().cars.selectedColor).toBe("red");
+  });
+
+  it("Should be able to set current manufacturer", async () => {
+    const store = createStore;
+    store.dispatch(carsActions.setSelectedColor("Audi"));
+    expect(store.getState().cars.selectedManufacturer).toBe("Audi");
+  });
+
+  it("Should be able to set current page", async () => {
+    const store = createStore;
+    store.dispatch(carsActions.setCurrentPage(16));
+    expect(store.getState().cars.currentPage).toBe(16);
+  });
+
+  it("Should be able to add favourites", async () => {
+    const store = createStore;
+    store.dispatch(carsActions.addCarToFavourite(456));
+    expect(store.getState().cars.favourites.includes(456)).toBeTruthy();
+  });
+
+  it("Should be able to remove favourites", async () => {
+    const store = createStore;
+    store.dispatch(carsActions.addCarToFavourite(456));
+    store.dispatch(carsActions.removeCarToFavourite(456));
+    expect(store.getState().cars.favourites.includes(456)).toBeFalsy();
   });
 });
