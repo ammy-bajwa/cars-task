@@ -62,10 +62,10 @@ const carsSlice = createSlice({
       state.totalCarsCount = totalCarsCount;
       state.totalPageCount = totalPageCount;
     });
-    builder.addCase(getCars.pending, (state, action) => {
+    builder.addCase(getCars.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(getCars.rejected, (state, action) => {
+    builder.addCase(getCars.rejected, (state) => {
       state.loading = false;
     });
 
@@ -77,10 +77,10 @@ const carsSlice = createSlice({
       state.totalCarsCount = totalCarsCount;
       state.totalPageCount = totalPageCount;
     });
-    builder.addCase(getMoreCars.pending, (state, action) => {
+    builder.addCase(getMoreCars.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(getMoreCars.rejected, (state, action) => {
+    builder.addCase(getMoreCars.rejected, (state) => {
       state.loading = false;
     });
 
@@ -90,10 +90,10 @@ const carsSlice = createSlice({
       state.colors = colors;
       state.loadingFilters = false;
     });
-    builder.addCase(getColorsList.pending, (state, action) => {
+    builder.addCase(getColorsList.pending, (state) => {
       state.loadingFilters = true;
     });
-    builder.addCase(getColorsList.rejected, (state, action) => {
+    builder.addCase(getColorsList.rejected, (state) => {
       state.loadingFilters = false;
     });
 
@@ -103,10 +103,10 @@ const carsSlice = createSlice({
       state.manufacturers = manufacturers?.map((data: any) => data?.name);
       state.loadingFilters = false;
     });
-    builder.addCase(getManufactures.pending, (state, action) => {
+    builder.addCase(getManufactures.pending, (state) => {
       state.loadingFilters = true;
     });
-    builder.addCase(getManufactures.rejected, (state, action) => {
+    builder.addCase(getManufactures.rejected, (state) => {
       state.loadingFilters = false;
     });
   },
