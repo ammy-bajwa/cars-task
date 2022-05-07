@@ -11,3 +11,9 @@ export const FiltersWrapper = styled.div<FiltersWrapperProps>`
   padding: 20px;
   width: auto;
 `;
+
+export const FiltersButtonWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  width: 100%;
+`;

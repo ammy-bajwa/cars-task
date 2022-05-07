@@ -4,19 +4,28 @@ import { FilterItemWrapper } from ".";
 
 interface FilterItemProps {
   title: string;
+  options: string[];
+  onChangeHandler: any;
 }
 
-export const FilterItem: FC<FilterItemProps> = ({ title }) => {
+export const FilterItem: FC<FilterItemProps> = ({
+  title,
+  options,
+  onChangeHandler,
+}) => {
   const theme = useTheme();
 
   return (
-    <FilterItemWrapper borderColor={theme.palette.secondary.light} color={theme.palette.secondary.main}>
+    <FilterItemWrapper
+      borderColor={theme.palette.secondary.light}
+      color={theme.palette.secondary.main}
+    >
       <span>{title}</span>
       <br />
-      <select>
-        <option value="v1">v1</option>
-        <option value="v2">v2</option>
-        <option value="v3">v3</option>
+      <select onChange={onChangeHandler}>
+        {options?.map((option) => (
+          <option key={option}>{option}</option>
+        ))}
       </select>
     </FilterItemWrapper>
   );

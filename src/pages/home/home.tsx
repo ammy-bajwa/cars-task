@@ -16,7 +16,7 @@ export const Home = () => {
   );
 
   useEffect(() => {
-    dispatch(getCars());
+    dispatch(getCars({}));
   }, [dispatch]);
 
   return (

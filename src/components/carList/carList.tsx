@@ -20,10 +20,6 @@ const testData = {
 export const CarList = () => {
   const { cars, loading } = useAppSelector((globalStore) => globalStore.cars);
 
-  useEffect(() => {
-    console.log(cars);
-  }, [cars]);
-
   const carsRenderer = () => {
     if (loading) {
       return "Loading.........";
