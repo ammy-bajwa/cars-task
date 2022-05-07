@@ -2,17 +2,21 @@ import { Filters, CarList, CustomButton } from "../../components";
 
 import { HomeWrapper, HomeHeading, HomeCarsSection } from ".";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { getCars } from "../../store";
+import { carsActions, getCars, getMoreCars } from "../../store";
 import { useEffect, useState } from "react";
 
 export const Home = () => {
   const dispatch = useAppDispatch();
 
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const { totalCarsCount, totalPageCount, loading } = useAppSelector(
-    (globalStore) => globalStore?.cars
-  );
+  const {
+    totalCarsCount,
+    totalPageCount,
+    loading,
+    selectedColor,
+    selectedManufacturer,
+    currentPage,
+    cars,
+  } = useAppSelector((globalStore) => globalStore?.cars);
 
   useEffect(() => {
     dispatch(getCars({}));
@@ -20,8 +24,14 @@ export const Home = () => {
 
   const loadMoreHandler = () => {
     if (currentPage < totalPageCount) {
-      dispatch(getCars({ pageNum: currentPage + 1 }));
-      setCurrentPage(currentPage + 1);
+      dispatch(
+        getMoreCars({
+          pageNum: currentPage + 1,
+          color: selectedColor,
+          manufacturer: selectedManufacturer,
+        })
+      );
+      dispatch(carsActions.setCurrentPage(currentPage + 1));
     }
   };
 
@@ -31,7 +41,7 @@ export const Home = () => {
       <HomeCarsSection>
         <HomeHeading>Available Cars</HomeHeading>
         <h3>
-          Show {totalCarsCount} of {totalPageCount * totalCarsCount} results
+          Show {cars?.length} of {totalCarsCount} results
         </h3>
         <CarList />
         {!loading && totalPageCount > currentPage && (

@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 import { FiltersButtonWrapper, FiltersWrapper } from ".";
 import { FilterItem, CustomButton } from "..";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { getCars, getColorsList, getManufactures } from "../../store";
+import {
+  getCars,
+  getColorsList,
+  getManufactures,
+  carsActions,
+} from "../../store";
 
 export const Filters = () => {
   const theme = useTheme();
@@ -12,13 +17,9 @@ export const Filters = () => {
 
   const colors = useAppSelector((globalStore) => globalStore?.cars?.colors);
 
-  const manufacturers = useAppSelector(
-    (globalStore) => globalStore?.cars?.manufacturers
+  const { manufacturers, selectedColor, selectedManufacturer } = useAppSelector(
+    (globalStore) => globalStore?.cars
   );
-
-  const [selectedColor, setSelectedColor] = useState("");
-
-  const [selectedManufacturer, setSelectedManufacturer] = useState("");
 
   useEffect(() => {
     dispatch(getColorsList());
@@ -30,22 +31,22 @@ export const Filters = () => {
 
   useEffect(() => {
     if (colors?.length) {
-      setSelectedColor(colors[0]);
+      dispatch(carsActions.setSelectedColor(colors[0]));
     }
-  }, [colors]);
+  }, [colors, dispatch]);
 
   useEffect(() => {
     if (manufacturers?.length) {
-      setSelectedManufacturer(manufacturers[0]);
+      dispatch(carsActions.setSelectedManufacturer(manufacturers[0]));
     }
-  }, [manufacturers]);
+  }, [manufacturers, dispatch]);
 
   const onColorChange = (event: any) => {
-    setSelectedColor(event?.target?.value);
+    dispatch(carsActions.setSelectedColor(event?.target?.value));
   };
 
   const onManufacturerChange = (event: any) => {
-    setSelectedManufacturer(event?.target?.value);
+    dispatch(carsActions.setSelectedManufacturer(event?.target?.value));
   };
 
   const filterHandler = () => {

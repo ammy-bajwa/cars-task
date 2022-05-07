@@ -6,9 +6,9 @@ import { useAppSelector } from "../../hooks";
 
 const testData = {
   stockNumber: 87230,
-  manufacturerName: "Fiat",
+  manufacturerName: "Audi",
   modelName: "Cinquecento",
-  color: "white",
+  color: "red",
   mileage: {
     number: 102947,
     unit: "km",

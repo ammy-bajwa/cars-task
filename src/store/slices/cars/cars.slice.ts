@@ -4,17 +4,26 @@
  */
 
 import { createSlice } from "@reduxjs/toolkit";
-import { CarsSliceState, getCars, getColorsList, getManufactures } from ".";
+import {
+  CarsSliceState,
+  getCars,
+  getColorsList,
+  getManufactures,
+  getMoreCars,
+} from ".";
 
 export const carsInitialState: CarsSliceState = {
   cars: [],
   currentCar: null,
+  currentPage: 1,
   loading: false,
   loadingFilters: false,
   totalCarsCount: 0,
   totalPageCount: 0,
   colors: [],
   manufacturers: [],
+  selectedColor: "red",
+  selectedManufacturer: "Audi",
 };
 
 const carsSlice = createSlice({
@@ -23,6 +32,15 @@ const carsSlice = createSlice({
   reducers: {
     setCurrentCar(state, action) {
       state.currentCar = action?.payload;
+    },
+    setSelectedColor(state, action) {
+      state.selectedColor = action?.payload;
+    },
+    setSelectedManufacturer(state, action) {
+      state.selectedManufacturer = action?.payload;
+    },
+    setCurrentPage(state, action) {
+      state.currentPage = action?.payload;
     },
   },
   extraReducers: (builder) => {
@@ -38,6 +56,21 @@ const carsSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(getCars.rejected, (state, action) => {
+      state.loading = false;
+    });
+
+    // Here we will handle loading more cars
+    builder.addCase(getMoreCars.fulfilled, (state, action: any) => {
+      const { cars, totalCarsCount, totalPageCount } = action?.payload;
+      state.loading = false;
+      state.cars = [...state.cars, ...cars];
+      state.totalCarsCount = totalCarsCount;
+      state.totalPageCount = totalPageCount;
+    });
+    builder.addCase(getMoreCars.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(getMoreCars.rejected, (state, action) => {
       state.loading = false;
     });
 
