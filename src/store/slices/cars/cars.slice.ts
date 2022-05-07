@@ -46,6 +46,12 @@ const carsSlice = createSlice({
     addCarToFavourite(state, action) {
       state.favourites = [...state.favourites, action?.payload];
     },
+    removeCarToFavourite(state, action) {
+      const filteredFavourites = state.favourites.filter(
+        (carId) => action?.payload !== carId
+      );
+      state.favourites = filteredFavourites;
+    },
   },
   extraReducers: (builder) => {
     // Here we will handle cars

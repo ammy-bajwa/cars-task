@@ -39,6 +39,8 @@ export const CarDetailsFavSection: FC = () => {
   const addToFavouriteHandler = () => {
     if (isAlreadyExists) {
       dispatch(carsActions?.addCarToFavourite(currentCar?.stockNumber));
+    } else {
+      dispatch(carsActions?.removeCarToFavourite(currentCar?.stockNumber));
     }
   };
 
@@ -50,7 +52,7 @@ export const CarDetailsFavSection: FC = () => {
       </p>
       <ButtonWrapper>
         <CustomButton
-          text={isAlreadyExists ? "Save" : "Added"}
+          text={isAlreadyExists ? "Save" : "Remove From Favourite"}
           clickHandler={addToFavouriteHandler}
         />
       </ButtonWrapper>
