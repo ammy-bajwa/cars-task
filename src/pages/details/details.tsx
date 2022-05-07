@@ -10,7 +10,7 @@ export const Details = () => {
   );
 
   return (
-    <DetailsWrapper>
+    <DetailsWrapper data-testid="Details">
       <CarImgSection src={currentCar?.pictureUrl || NoCarImg} />
       <CarDetails />
     </DetailsWrapper>
