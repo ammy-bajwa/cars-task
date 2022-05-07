@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { DetailsWrapper, CarImgSection } from ".";
 import { CarDetails } from "../../components";
 import { useAppSelector } from "../../hooks";

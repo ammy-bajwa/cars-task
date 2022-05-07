@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material/styles";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { FiltersButtonWrapper, FiltersWrapper } from ".";
 import { FilterItem, CustomButton } from "..";
 import { useAppDispatch, useAppSelector } from "../../hooks";

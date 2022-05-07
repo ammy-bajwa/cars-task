@@ -3,7 +3,7 @@ import { Filters, CarList, CustomButton } from "../../components";
 import { HomeWrapper, HomeHeading, HomeCarsSection } from ".";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { carsActions, getCars, getMoreCars } from "../../store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const Home = () => {
   const dispatch = useAppDispatch();
