@@ -10,7 +10,7 @@ export const Navbar = () => {
 
   return (
     <NavbarWrapper
-      primary={theme.palette.primary.main}
+      borderColor={theme.palette.secondary.light}
       color={theme.palette.secondary.main}
     >
       <Link to="/">

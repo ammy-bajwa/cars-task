@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 
 interface NavbarWrapperProps {
-  primary: string;
+  borderColor: string;
   color: string;
 }
 
 export const NavbarWrapper = styled.nav<NavbarWrapperProps>`
   align-items: center;
-  border-bottom: ${(props) => `1px solid ${props?.primary}`};
+  border-bottom: ${(props) => `1px solid ${props?.borderColor}`};
   display: flex;
   justify-content: space-between;
   padding: 20px 10px;
