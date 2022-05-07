@@ -1,23 +1,29 @@
-import { Filters, CarList } from "../../components";
+import { Filters, CarList, CustomButton } from "../../components";
 
 import { HomeWrapper, HomeHeading, HomeCarsSection } from ".";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { getCars } from "../../store";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Home = () => {
   const dispatch = useAppDispatch();
 
-  const totalCarsCount = useAppSelector(
-    (globalStore) => globalStore?.cars?.totalCarsCount
-  );
-  const totalPageCount = useAppSelector(
-    (globalStore) => globalStore?.cars?.totalPageCount
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const { totalCarsCount, totalPageCount, loading } = useAppSelector(
+    (globalStore) => globalStore?.cars
   );
 
   useEffect(() => {
     dispatch(getCars({}));
   }, [dispatch]);
+
+  const loadMoreHandler = () => {
+    if (currentPage < totalPageCount) {
+      dispatch(getCars({ pageNum: currentPage + 1 }));
+      setCurrentPage(currentPage + 1);
+    }
+  };
 
   return (
     <HomeWrapper>
@@ -28,6 +34,9 @@ export const Home = () => {
           Show {totalCarsCount} of {totalPageCount * totalCarsCount} results
         </h3>
         <CarList />
+        {!loading && totalPageCount > currentPage && (
+          <CustomButton text="Load More" clickHandler={loadMoreHandler} />
+        )}
       </HomeCarsSection>
     </HomeWrapper>
   );
