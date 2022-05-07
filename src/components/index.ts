@@ -4,3 +4,6 @@ export * from "./filters";
 export * from "./filterItem";
 export * from "./carList";
 export * from "./carListItem";
+export * from "./carDetails";
+export * from "./carDetailsInfoSection";
+export * from "./carDetailsFavSection";

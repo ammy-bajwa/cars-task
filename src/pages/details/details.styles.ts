@@ -14,18 +14,3 @@ export const CarImgSection = styled.img`
   object-fit: cover;
   width: 100%;
 `;
-
-export const CarDetailsSectionWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin: 20px 0px;
-`;
-
-export const CarDetailsSection = styled.div`
-  width: 40%;
-`;
-
-export const CarFavSection = styled.div`
-  width: 30%;
-`;

@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { CarListWrapper } from ".";
 import { CarListItem } from "..";
 
@@ -15,10 +17,16 @@ const testData = {
 };
 
 export const CarList = () => {
-  return (
-    <CarListWrapper>
-      <CarListItem data={testData}/>
-      <CarListItem data={testData} />
-    </CarListWrapper>
-  );
+  const [cars, setCars] = useState([1, 2, 3]);
+
+  const carsRenderer = () => {
+    return cars?.length
+      ? cars.map(() => (
+          <Link to={"/details"}>
+            <CarListItem data={testData} />
+          </Link>
+        ))
+      : "No Car Found";
+  };
+  return <CarListWrapper>{carsRenderer()}</CarListWrapper>;
 };

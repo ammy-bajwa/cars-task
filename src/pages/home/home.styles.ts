@@ -5,7 +5,7 @@ interface HomeWrapperProps {}
 export const HomeWrapper = styled.div<HomeWrapperProps>`
   padding: 30px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: flex-start;
 `;
 

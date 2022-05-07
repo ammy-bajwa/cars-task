@@ -3,6 +3,7 @@ import Logo from "../../img/logo.png";
 import { useTheme } from "@mui/material/styles";
 import { NavbarWrapper, NavbarListWrapper } from ".";
 import { NavItem } from "..";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const theme = useTheme();
@@ -12,7 +13,9 @@ export const Navbar = () => {
       primary={theme.palette.primary.main}
       color={theme.palette.secondary.main}
     >
-      <img src={Logo} height={"40px"} alt="logo" />
+      <Link to="/">
+        <img src={Logo} height={"40px"} alt="logo" />
+      </Link>
       <NavbarListWrapper>
         <NavItem text="Purchases" link="/" />
         <NavItem text="My Orders" link="/" />
