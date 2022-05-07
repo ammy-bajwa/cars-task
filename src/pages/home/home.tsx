@@ -36,7 +36,7 @@ export const Home = () => {
   };
 
   return (
-    <HomeWrapper data-testid='Home'>
+    <HomeWrapper data-testid="Home">
       <Filters />
       <HomeCarsSection>
         <HomeHeading>Available Cars</HomeHeading>
