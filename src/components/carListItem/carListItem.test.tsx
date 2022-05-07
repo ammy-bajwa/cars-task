@@ -16,7 +16,7 @@ const data = {
 
 const setup = () => {
   render(<CarListItem data={data} />, {});
-  const component = screen.queryByTestId("carListItem");
+  const component = screen.queryByTestId("CarListItem");
   return { component };
 };
 

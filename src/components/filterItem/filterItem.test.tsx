@@ -14,5 +14,6 @@ describe("<FilterItem />", () => {
   it("Should Render FilterItem Component", () => {
     const { component } = setup();
     expect(component).toBeInTheDocument();
+    expect(component).toHaveTextContent("test");
   });
 });

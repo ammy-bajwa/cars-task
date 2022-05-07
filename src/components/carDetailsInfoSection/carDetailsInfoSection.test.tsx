@@ -11,5 +11,8 @@ describe("<CarDetailsInfoSection />", () => {
   it("Should Render CarDetailsInfoSection Component", () => {
     const { component } = setup();
     expect(component).toBeInTheDocument();
+    expect(component).toHaveTextContent(
+      "This car is currently available and can be delivered as soon as"
+    );
   });
 });

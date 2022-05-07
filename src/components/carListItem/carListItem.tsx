@@ -47,7 +47,7 @@ export const CarListItem: FC<CarListItemProps> = ({
       color={theme.palette.secondary.main}
       primary={theme.palette.primary.main}
       onClick={carListItemClickHandler}
-      data-testid="carListItem"
+      data-testid="CarListItem"
     >
       <img src={pictureUrl} alt="car img" height={"100px"} />
       <CarListItemInfoWrapper>

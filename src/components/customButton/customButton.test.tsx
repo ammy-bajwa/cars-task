@@ -11,5 +11,6 @@ describe("<CustomButton />", () => {
   it("Should Render CustomButton Component", () => {
     const { component } = setup();
     expect(component).toBeInTheDocument();
+    expect(component).toHaveTextContent("test");
   });
 });

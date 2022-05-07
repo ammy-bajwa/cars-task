@@ -11,5 +11,6 @@ describe("<NavItem />", () => {
   it("Should Render NavItem Component", () => {
     const { component } = setup();
     expect(component).toBeInTheDocument();
+    expect(component).toHaveTextContent("test");
   });
 });

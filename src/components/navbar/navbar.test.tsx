@@ -11,5 +11,8 @@ describe("<Navbar />", () => {
   it("Should Render Navbar Component", () => {
     const { component } = setup();
     expect(component).toBeInTheDocument();
+    expect(component).toHaveTextContent('Purchases');
+    expect(component).toHaveTextContent('My Orders');
+    expect(component).toHaveTextContent('Sell');
   });
 });
