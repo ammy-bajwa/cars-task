@@ -1,5 +1,6 @@
 export interface CarsSliceState {
   cars: any[];
+  favourites: number[];
   currentCar: any;
   loading: boolean;
   loadingFilters: boolean;

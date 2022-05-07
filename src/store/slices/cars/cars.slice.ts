@@ -14,6 +14,7 @@ import {
 
 export const carsInitialState: CarsSliceState = {
   cars: [],
+  favourites: [],
   currentCar: null,
   currentPage: 1,
   loading: false,
@@ -41,6 +42,9 @@ const carsSlice = createSlice({
     },
     setCurrentPage(state, action) {
       state.currentPage = action?.payload;
+    },
+    addCarToFavourite(state, action) {
+      state.favourites = [...state.favourites, action?.payload];
     },
   },
   extraReducers: (builder) => {
