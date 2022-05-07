@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/components/navbar/navbar.test.tsx"  ]
 }

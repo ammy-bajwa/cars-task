@@ -8,7 +8,10 @@ export const CarDetails: FC = () => {
   const theme = useTheme();
 
   return (
-    <CarDetailsSectionWrapper color={theme.palette.secondary.main}>
+    <CarDetailsSectionWrapper
+      data-testid="CarDetails"
+      color={theme.palette.secondary.main}
+    >
       <CarDetailsInfoSection />
       <CarDetailsFavSection />
     </CarDetailsSectionWrapper>

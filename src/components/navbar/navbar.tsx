@@ -12,6 +12,7 @@ export const Navbar = () => {
     <NavbarWrapper
       borderColor={theme.palette.secondary.light}
       color={theme.palette.secondary.main}
+      data-testid="Navbar"
     >
       <Link to="/">
         <img src={Logo} height={"40px"} alt="logo" />

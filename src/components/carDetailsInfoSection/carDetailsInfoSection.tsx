@@ -8,7 +8,7 @@ export const CarDetailsInfoSection: FC = () => {
     (globalStore) => globalStore?.cars?.currentCar
   );
   return (
-    <CarDetailsSection>
+    <CarDetailsSection data-testid="CarDetailsInfoSection">
       <h1>
         {currentCar?.manufacturerName} {currentCar?.modelName}
       </h1>

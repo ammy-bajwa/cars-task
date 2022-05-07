@@ -8,6 +8,7 @@ export const CustomButton: FC<CustomButtonProps> = ({ text, clickHandler }) => {
 
   return (
     <CustomButtonWrapper
+      data-testid="CustomButton"
       bgColor={theme.palette.primary.main}
       onClick={clickHandler}
     >

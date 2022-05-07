@@ -60,7 +60,10 @@ export const Filters = () => {
   };
 
   return (
-    <FiltersWrapper borderColor={theme.palette.secondary.light}>
+    <FiltersWrapper
+      borderColor={theme.palette.secondary.light}
+      data-testid="Filters"
+    >
       <FilterItem
         title="Color"
         options={colors}

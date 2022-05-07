@@ -13,6 +13,7 @@ export const FilterItem: FC<FilterItemProps> = ({
     <FilterItemWrapper
       borderColor={theme.palette.secondary.light}
       color={theme.palette.secondary.main}
+      data-testid='FilterItem'
     >
       <span>{title}</span>
       <br />

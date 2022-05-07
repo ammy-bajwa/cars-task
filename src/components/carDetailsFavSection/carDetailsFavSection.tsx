@@ -35,7 +35,10 @@ export const CarDetailsFavSection: FC = () => {
   };
 
   return (
-    <CarFavSection borderColor={theme.palette.secondary.light}>
+    <CarFavSection
+      borderColor={theme.palette.secondary.light}
+      data-testid="CarFavSection"
+    >
       <p>
         If you like this car, click the button and save it in your collection of
         favourite items.

@@ -14,5 +14,7 @@ export const CarList = () => {
       : "No Car Found";
   };
 
-  return <CarListWrapper>{carsRenderer()}</CarListWrapper>;
+  return (
+    <CarListWrapper data-testid="CarList">{carsRenderer()}</CarListWrapper>
+  );
 };
