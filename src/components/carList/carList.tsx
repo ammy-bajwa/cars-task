@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CarListWrapper } from ".";
 import { CarListItem } from "..";
+import { useAppSelector } from "../../hooks";
 
 const testData = {
   stockNumber: 87230,
@@ -17,13 +18,20 @@ const testData = {
 };
 
 export const CarList = () => {
-  const [cars, setCars] = useState([1, 2, 3]);
+  const { cars, loading } = useAppSelector((globalStore) => globalStore.cars);
+
+  useEffect(() => {
+    console.log(cars);
+  }, [cars]);
 
   const carsRenderer = () => {
+    if (loading) {
+      return "Loading.........";
+    }
     return cars?.length
-      ? cars.map(() => (
-          <Link to={"/details"}>
-            <CarListItem data={testData} />
+      ? cars.map((car) => (
+          <Link to={"/details"} key={car?.stockNumber}>
+            <CarListItem data={car} />
           </Link>
         ))
       : "No Car Found";

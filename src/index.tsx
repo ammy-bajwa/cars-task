@@ -7,15 +7,22 @@ import ThemeProvider from "@mui/system/ThemeProvider";
 import { theme } from "./theme";
 
 import "./styles/index.css";
+import { createStore } from "./store";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const store = createStore;
+
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <Provider store={{ ...store }}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 
