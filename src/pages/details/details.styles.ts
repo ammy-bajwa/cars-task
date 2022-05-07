@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 
-interface DetailsWrapperProps {}
-
-export const DetailsWrapper = styled.div<DetailsWrapperProps>`
+export const DetailsWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

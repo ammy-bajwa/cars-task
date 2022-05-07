@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-
-interface CarFavSectionProps {
-  borderColor: string;
-}
+import { CarFavSectionProps } from ".";
 
 export const CarFavSection = styled.div<CarFavSectionProps>`
   border: ${(props) => `1px solid ${props?.borderColor}`};

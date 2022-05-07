@@ -1,12 +1,7 @@
 import { FC } from "react";
 import { useTheme } from "@mui/material/styles";
 
-import { CustomButtonWrapper } from ".";
-
-interface CustomButtonProps {
-  text: string;
-  clickHandler: any;
-}
+import { CustomButtonProps, CustomButtonWrapper } from ".";
 
 export const CustomButton: FC<CustomButtonProps> = ({ text, clickHandler }) => {
   const theme = useTheme();

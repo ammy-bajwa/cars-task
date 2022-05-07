@@ -1,12 +1,6 @@
 import { FC } from "react";
 import { useTheme } from "@mui/material/styles";
-import { FilterItemWrapper } from ".";
-
-interface FilterItemProps {
-  title: string;
-  options: string[];
-  onChangeHandler: any;
-}
+import { FilterItemProps, FilterItemWrapper } from ".";
 
 export const FilterItem: FC<FilterItemProps> = ({
   title,

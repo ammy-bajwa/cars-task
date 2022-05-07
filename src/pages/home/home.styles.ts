@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 
-interface HomeWrapperProps {}
-
-export const HomeWrapper = styled.div<HomeWrapperProps>`
+export const HomeWrapper = styled.div`
   padding: 30px;
   display: flex;
   justify-content: space-evenly;

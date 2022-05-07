@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
-
-interface NavbarWrapperProps {
-  borderColor: string;
-  color: string;
-}
+import { NavbarWrapperProps } from ".";
 
 export const NavbarWrapper = styled.nav<NavbarWrapperProps>`
   align-items: center;

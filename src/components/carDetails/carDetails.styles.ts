@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-
-interface CarDetailsSectionWrapperType {
-  color: string;
-}
+import { CarDetailsSectionWrapperType } from ".";
 
 export const CarDetailsSectionWrapper = styled.div<CarDetailsSectionWrapperType>`
   display: flex;

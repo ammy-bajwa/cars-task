@@ -18,14 +18,6 @@ export const CarDetailsFavSection: FC = () => {
   );
 
   useEffect(() => {
-    console.log(currentCar);
-  }, [currentCar]);
-
-  useEffect(() => {
-    console.log(favourites);
-  }, [favourites]);
-
-  useEffect(() => {
     const isAlreadyExists =
       favourites.findIndex((id) => id === currentCar?.stockNumber) < 0
         ? true
@@ -33,8 +25,6 @@ export const CarDetailsFavSection: FC = () => {
 
     setIsAlreadyExists(isAlreadyExists);
   }, [currentCar, favourites]);
-
-  console.log(currentCar?.stockNumber);
 
   const addToFavouriteHandler = () => {
     if (isAlreadyExists) {

@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-
-interface CustomButtonWrapperType {
-  bgColor: string;
-}
+import { CustomButtonWrapperType } from ".";
 
 export const CustomButtonWrapper = styled.button<CustomButtonWrapperType>`
   background-color: ${(props) => props.bgColor};

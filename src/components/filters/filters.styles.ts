@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-
-interface FiltersWrapperProps {
-  borderColor: string;
-}
+import { FiltersWrapperProps } from ".";
 
 export const FiltersWrapper = styled.div<FiltersWrapperProps>`
   display: inline-block;

@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
-
-interface FilterItemWrapperProps {
-  color: string;
-  borderColor: string;
-}
+import { FilterItemWrapperProps } from ".";
 
 export const FilterItemWrapper = styled.div<FilterItemWrapperProps>`
   width: 300px;

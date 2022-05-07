@@ -1,10 +1,6 @@
 import styled from "@emotion/styled";
+import { CarListItemWrapperProps } from ".";
 
-interface CarListItemWrapperProps {
-  color: string;
-  borderColor: string;
-  primary: string;
-}
 
 export const CarListItemWrapper = styled.div<CarListItemWrapperProps>`
   border: ${(props) => `1px solid ${props?.borderColor}`};
