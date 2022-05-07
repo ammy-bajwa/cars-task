@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 interface CarListItemWrapperProps {
   color: string;
   borderColor: string;
+  primary: string;
 }
 
 export const CarListItemWrapper = styled.div<CarListItemWrapperProps>`
@@ -13,4 +14,14 @@ export const CarListItemWrapper = styled.div<CarListItemWrapperProps>`
   align-content: center;
   padding: 10px;
   width: auto;
+  span {
+    color: ${(props) => props?.primary};
+  }
+`;
+
+export const CarListItemInfoWrapper = styled.div`
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 `;

@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { useTheme } from "@mui/material/styles";
 
-import NoCar from "../../img/noCar.png";
+import { CarListItemWrapper, CarListItemInfoWrapper } from ".";
 
-import { CarListItemWrapper } from ".";
+import NoCar from "../../img/noCar.png";
 
 type mileageType = {
   number: number;
@@ -39,16 +39,19 @@ export const CarListItem: FC<CarListItemProps> = ({
     <CarListItemWrapper
       borderColor={theme.palette.secondary.light}
       color={theme.palette.secondary.main}
+      primary={theme.palette.primary.main}
     >
       <img src={pictureUrl} alt="car img" height={"100px"} />
-      <div style={{ marginLeft: "20px" }}>
-        <h2 style={{ margin: 0 }}>{manufacturerName}</h2>
+      <CarListItemInfoWrapper>
+        <h2 style={{ margin: 0 }}>
+          {manufacturerName} {modelName}
+        </h2>
         <div>
           Stock #{stockNumber} - {mileage.number / 1000 + mileage.unit} -{" "}
           {fuelType} -{color}
         </div>
         <span>View Details</span>
-      </div>
+      </CarListItemInfoWrapper>
     </CarListItemWrapper>
   );
 };
