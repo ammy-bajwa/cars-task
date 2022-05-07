@@ -1,7 +1,7 @@
 // import { useTheme } from "@mui/material/styles";
-import { Filters } from "..";
+import { Filters } from "../../components";
 import { HomeWrapper, HomeHeading, HomeCarsSection } from ".";
-import { CarList } from "../carList";
+import { CarList } from "../../components/carList";
 
 export const Home = () => {
   // const theme = useTheme();
