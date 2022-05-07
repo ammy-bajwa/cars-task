@@ -18,7 +18,11 @@ export const carsInitialState: CarsSliceState = {
 const carsSlice = createSlice({
   name: "cars",
   initialState: carsInitialState,
-  reducers: {},
+  reducers: {
+    setCurrentCar(state, action) {
+      state.currentCar = action?.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getCars.fulfilled, (state, action: any) => {
       const { cars, totalCarsCount, totalPageCount } = action?.payload;

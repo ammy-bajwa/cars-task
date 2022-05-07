@@ -29,12 +29,9 @@ export const CarList = () => {
       return "Loading.........";
     }
     return cars?.length
-      ? cars.map((car) => (
-          <Link to={"/details"} key={car?.stockNumber}>
-            <CarListItem data={car} />
-          </Link>
-        ))
+      ? cars.map((car) => <CarListItem data={car} key={car?.stockNumber} />)
       : "No Car Found";
   };
+
   return <CarListWrapper>{carsRenderer()}</CarListWrapper>;
 };

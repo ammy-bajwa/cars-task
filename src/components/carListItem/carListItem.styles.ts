@@ -14,6 +14,9 @@ export const CarListItemWrapper = styled.div<CarListItemWrapperProps>`
   align-content: center;
   padding: 10px;
   width: auto;
+  &:hover {
+    cursor: pointer;
+  }
   span {
     color: ${(props) => props?.primary};
   }

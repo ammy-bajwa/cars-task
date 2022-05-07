@@ -11,6 +11,6 @@ export const DetailsWrapper = styled.div<DetailsWrapperProps>`
 
 export const CarImgSection = styled.img`
   height: 40vh;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 `;
