@@ -5,4 +5,8 @@ export const CarDetailsSection = styled.div`
   h1 {
     margin: 0px;
   }
+
+  @media screen and (max-width: 900px) {
+    width: 80%;
+  }
 `;

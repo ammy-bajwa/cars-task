@@ -14,6 +14,9 @@ export const NavbarWrapper = styled.nav<NavbarWrapperProps>`
   a {
     color: ${(props) => props?.color};
   }
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const NavbarListWrapper = styled.ul`
@@ -22,4 +25,7 @@ export const NavbarListWrapper = styled.ul`
   justify-content: space-evenly;
   list-style: none;
   max-width: 300px;
+  @media screen and (max-width: 500px) {
+    width: 80%;
+  }
 `;

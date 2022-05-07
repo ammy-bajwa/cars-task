@@ -18,4 +18,9 @@ export const CarDetailsSectionWrapper = styled.div<CarDetailsSectionWrapperType>
     font-weight: 600;
     color: ${(props) => props.color};
   }
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;

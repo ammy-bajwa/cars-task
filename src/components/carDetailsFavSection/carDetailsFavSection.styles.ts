@@ -10,6 +10,9 @@ export const CarFavSection = styled.div<CarFavSectionProps>`
   padding: 20px;
   word-break: break-word;
   width: 20%;
+  @media screen and (max-width: 900px) {
+    width: 60%;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
