@@ -1,7 +1,9 @@
+import { CarType } from "../../../components";
+
 export interface CarsSliceState {
-  cars: any[];
+  cars: CarType[];
   favourites: number[];
-  currentCar: any;
+  currentCar: CarType | null;
   loading: boolean;
   loadingFilters: boolean;
   totalCarsCount: number;
