@@ -12,6 +12,7 @@ export const HomeWrapper = styled.div<HomeWrapperProps>`
 export const HomeCarsSection = styled.div`
   display: "inline-block";
   margin-left: 20px;
+  width: 70%;
 `;
 
 export const HomeHeading = styled.h2`
