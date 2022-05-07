@@ -1,7 +1,6 @@
-import { Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { FiltersWrapper } from ".";
-import { FilterItem } from "..";
+import { FilterItem, CustomButton } from "..";
 
 export const Filters = () => {
   const theme = useTheme();
@@ -17,7 +16,7 @@ export const Filters = () => {
           justifyContent: "end",
         }}
       >
-        <Button variant="contained">Filter</Button>
+        <CustomButton text="Filter" clickHandler={true} />
       </div>
     </FiltersWrapper>
   );
