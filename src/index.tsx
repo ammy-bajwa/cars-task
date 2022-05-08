@@ -6,11 +6,13 @@ import ThemeProvider from "@mui/system/ThemeProvider";
 
 import { theme } from "./theme";
 
-import "./styles/index.css";
 import { createStore } from "./store";
 import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+
+import "./styles/index.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

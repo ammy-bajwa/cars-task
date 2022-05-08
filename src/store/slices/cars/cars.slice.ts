@@ -4,6 +4,7 @@
  */
 
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import {
   CarsSliceState,
   getCars,
@@ -67,6 +68,7 @@ const carsSlice = createSlice({
     });
     builder.addCase(getCars.rejected, (state) => {
       state.loading = false;
+      toast.error("Something went wrong in fetching cars");
     });
 
     // Here we will handle loading more cars
@@ -82,6 +84,7 @@ const carsSlice = createSlice({
     });
     builder.addCase(getMoreCars.rejected, (state) => {
       state.loading = false;
+      toast.error("Something went wrong in fetching cars");
     });
 
     // Here we will handle getting colors
@@ -95,6 +98,7 @@ const carsSlice = createSlice({
     });
     builder.addCase(getColorsList.rejected, (state) => {
       state.loadingFilters = false;
+      toast.error("Something went wrong in fetching colors");
     });
 
     // Here we will handle getting manufacturers
@@ -108,6 +112,7 @@ const carsSlice = createSlice({
     });
     builder.addCase(getManufactures.rejected, (state) => {
       state.loadingFilters = false;
+      toast.error("Something went wrong in fetching manufacturers");
     });
   },
 });

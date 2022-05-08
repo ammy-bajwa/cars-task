@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { Navbar } from "../components";
 import { Details, Home } from "../pages";
 
@@ -6,6 +7,7 @@ const App = () => {
   return (
     <Router>
       <div>
+        <ToastContainer autoClose={false} />
         <Navbar />
 
         {/* A <Switch> looks through its children <Route>s and
